@@ -24,6 +24,11 @@ header {
     justify-content: space-between;
 
     padding: 48px;
+
+    /* Ao utilizar o position fixed, aplica-se width 100% para cobrir toda a largura da página */
+    position: fixed;
+    width: 100%;
+    background-color: #1E1E1E;
 }
 
 button {
@@ -38,12 +43,15 @@ button {
     display: flex;
     align-items: center;
     gap: 12px;
+
+    cursor: pointer;
 }
 
 #form-habits {
     display: flex;
 
-    padding: 0 48px;
+    padding: 182px 48px 48px; /* 182px é a altura do header */
+    width: fit-content; /* Encaixa o conteudo na largura */
 }
 
 .habits {
@@ -107,4 +115,10 @@ input {
 input:checked {
     background-color: #8b5cf6;
     border: 2px solid #a78bfa;
+}
+
+@media (max-width: 570px) {
+    button div {
+        display: none; /* Não aparece na tela */
+    }
 }
